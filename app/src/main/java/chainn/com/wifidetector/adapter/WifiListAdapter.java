@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Objects;
 
 import chainn.com.wifidetector.R;
+import chainn.com.wifidetector.wifi.model.WiFiUtils;
 
 /**
  * Created by xuchen on 16/10/12.
@@ -23,6 +24,9 @@ public class WifiListAdapter extends BaseAdapter {
     LayoutInflater inflater;
     List<ScanResult> list;
     Context context;
+    TextView wifiName;
+    TextView wifiStrenth;
+    TextView wifiDistance;
     public WifiListAdapter(Context context, List<ScanResult> list) {
         this.inflater = LayoutInflater.from(context);
         this.list = list;
@@ -47,11 +51,14 @@ public class WifiListAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = null;
         view = inflater.inflate(R.layout.item_wifi_list, null);
+        Log.d("list", list.get(0).toString());
         ScanResult scanResult = list.get(position);
-        TextView wifiName = (TextView) view.findViewById(R.id.wifi_name);
+        wifiName = (TextView) view.findViewById(R.id.wifi_name);
         wifiName.setText(scanResult.SSID);
-        TextView wifiStrenth = (TextView) view.findViewById(R.id.wifi_strenth);
+        wifiStrenth = (TextView) view.findViewById(R.id.wifi_strenth);
         wifiStrenth.setText(String.valueOf(Math.abs(scanResult.level)));
+        wifiDistance = (TextView) view.findViewById(R.id.wifi_distance);
+        wifiDistance.setText(WiFiUtils.calculateDistance(scanResult.frequency, scanResult.level) + "m");
         ImageView imageView = (ImageView) view.findViewById(R.id.wifi_list_icon);
         if (Math.abs(scanResult.level) > 100) {
             imageView.setImageDrawable(this.context.getResources().getDrawable(R.drawable.stat_sys_wifi_signal_0));

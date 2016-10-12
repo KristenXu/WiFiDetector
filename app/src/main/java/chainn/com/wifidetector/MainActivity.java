@@ -1,14 +1,17 @@
 package chainn.com.wifidetector;
 
 import android.app.Activity;
+import android.content.Context;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -17,6 +20,11 @@ import android.widget.Toast;
 import java.util.List;
 
 import chainn.com.wifidetector.adapter.WifiListAdapter;
+import chainn.com.wifidetector.vendor.model.Database;
+import chainn.com.wifidetector.vendor.model.VendorService;
+import chainn.com.wifidetector.wifi.scanner.Scanner;
+import chainn.com.wifidetector.wifi.scanner.Transformer;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -74,10 +82,13 @@ public class MainActivity extends AppCompatActivity {
             super.handleMessage(msg);
             switch(msg.what){
                 case 1:
-                    wm.startScan();
-                    wmList = null;
-                    wmList = wm.getScanResults();
-                    refreshListView(wmList);
+                    if(wm.startScan()){
+                        wmList = null;
+                        wmList = wm.getScanResults();
+                        refreshListView(wmList);
+                    }else{
+                        Toast.makeText(MainActivity.this, "当前没有wifi信号", Toast.LENGTH_LONG).show();
+                    }
 
                     //使用getSystemService(String)来取回WifiManager然后处理wifi接入，
                     wi = wm.getConnectionInfo();//getConnectionInfo返回wifi连接的动态信息
@@ -95,6 +106,23 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
+
+
+    private void initializeMainContext(@NonNull Context context) {
+        WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+        Handler handler = new Handler();
+        Configuration configuration = new Configuration(false, true);
+
+        MainContext mainContext = MainContext.INSTANCE;
+        mainContext.setContext(context);
+        mainContext.setConfiguration(configuration);
+        mainContext.setResources(context.getResources());
+        mainContext.setDatabase(new Database(context));
+        mainContext.setVendorService(new VendorService());
+        mainContext.setLayoutInflater((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE));
+        mainContext.setLogger(new Logger());
+        mainContext.setScanner(new Scanner(wifiManager, handler, new Transformer()));
+    }
 
 
 }

@@ -5,6 +5,7 @@ package chainn.com.wifidetector.wifi.scanner;
  */
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import chainn.com.wifidetector.settings.Settings;
 
 
 class PeriodicScan implements Runnable {
@@ -13,11 +14,13 @@ class PeriodicScan implements Runnable {
 
     private final Scanner scanner;
     private final Handler handler;
+    private final Settings settings;
     private boolean running;
 
-    PeriodicScan(@NonNull Scanner scanner, @NonNull Handler handler) {
+    PeriodicScan(@NonNull Scanner scanner, @NonNull Handler handler, @NonNull Settings settings) {
         this.scanner = scanner;
         this.handler = handler;
+        this.settings = settings;
         start();
     }
 
@@ -39,7 +42,7 @@ class PeriodicScan implements Runnable {
     @Override
     public void run() {
         scanner.update();
-        nextRun(DELAY_INTERVAL);
+        nextRun(settings.getScanInterval() * DELAY_INTERVAL);
     }
 
     boolean isRunning() {

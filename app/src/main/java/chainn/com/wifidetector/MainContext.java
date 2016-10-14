@@ -7,14 +7,15 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.view.LayoutInflater;
 
+import chainn.com.wifidetector.settings.Settings;
 import chainn.com.wifidetector.vendor.model.Database;
 import chainn.com.wifidetector.vendor.model.VendorService;
 import chainn.com.wifidetector.wifi.scanner.Scanner;
-import chainn.com.wifidetector.Configuration;
 
 public enum MainContext {
     INSTANCE;
 
+    private Settings settings;
     private Context context;
     private Resources resources;
     private Scanner scanner;
@@ -24,6 +25,13 @@ public enum MainContext {
     private Logger logger;
     private Configuration configuration;
 
+    public Settings getSettings() {
+        return settings;
+    }
+
+    void setSettings(Settings settings) {
+        this.settings = settings;
+    }
 
     public VendorService getVendorService() {
         return vendorService;

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string-array name="group_by_array">
+        <item>没有</item>
+        <item>SSID</item>
+        <item>信道</item>
+    </string-array>
+
+    <string-array name="sort_by_array">
+        <item>信号强度</item>
+        <item>SSID</item>
+        <item>信道</item>
+    </string-array>
+
+    <string-array name="graph_legend_array">
+        <item>转</item>
+        <item>右</item>
+        <item>隐藏</item>
+    </string-array>
+
+    <string-array name="theme_array">
+        <item>深</item>
+        <item>浅</item>
+    </string-array>
+
+</resources>

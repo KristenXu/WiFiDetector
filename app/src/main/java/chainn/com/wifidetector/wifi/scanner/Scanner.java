@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import chainn.com.wifidetector.wifi.model.WiFiData;
+import chainn.com.wifidetector.settings.Settings;
 
 /**
  * Created by xuchen on 16/10/12.
@@ -22,12 +23,12 @@ public class Scanner {
     private Cache cache;
     private PeriodicScan periodicScan;
 
-    public Scanner(@NonNull WifiManager wifiManager, @NonNull Handler handler, @NonNull Transformer transformer) {
+    public Scanner(@NonNull WifiManager wifiManager, @NonNull Handler handler, @NonNull Settings settings, @NonNull Transformer transformer) {
         this.updateNotifiers = new ArrayList<>();
         this.wifiManager = wifiManager;
         this.transformer = transformer;
         this.setCache(new Cache());
-        this.periodicScan = new PeriodicScan(this, handler);
+        this.periodicScan = new PeriodicScan(this, handler, settings);
     }
 
     public void update() {

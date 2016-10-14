@@ -61,17 +61,17 @@ public class WifiListAdapter extends BaseAdapter {
         wifiDistance.setText(WiFiUtils.calculateDistance(scanResult.frequency, scanResult.level) + "m");
         ImageView imageView = (ImageView) view.findViewById(R.id.wifi_list_icon);
         if (Math.abs(scanResult.level) > 100) {
-            imageView.setImageDrawable(this.context.getResources().getDrawable(R.drawable.stat_sys_wifi_signal_0));
+            imageView.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_signal_wifi_0_bar_black_36dp));
         } else if (Math.abs(scanResult.level) > 80) {
-            imageView.setImageDrawable(this.context.getResources().getDrawable(R.drawable.stat_sys_wifi_signal_1));
+            imageView.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_signal_wifi_0_bar_black_36dp));
         } else if (Math.abs(scanResult.level) > 70) {
-            imageView.setImageDrawable(this.context.getResources().getDrawable(R.drawable.stat_sys_wifi_signal_1));
+            imageView.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_signal_wifi_1_bar_black_36dp));
         } else if (Math.abs(scanResult.level) > 60) {
-            imageView.setImageDrawable(this.context.getResources().getDrawable(R.drawable.stat_sys_wifi_signal_2));
+            imageView.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_signal_wifi_2_bar_black_36dp));
         } else if (Math.abs(scanResult.level) > 50) {
-            imageView.setImageDrawable(this.context.getResources().getDrawable(R.drawable.stat_sys_wifi_signal_3));
+            imageView.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_signal_wifi_3_bar_black_36dp));
         } else {
-            imageView.setImageDrawable(this.context.getResources().getDrawable(R.drawable.stat_sys_wifi_signal_4));
+            imageView.setImageDrawable(this.context.getResources().getDrawable(R.drawable.ic_signal_wifi_4_bar_black_36dp));
         }
 
         return view;

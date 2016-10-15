@@ -7,11 +7,11 @@
     <string name="navigation_drawer_open">打开式导览</string>
     <string name="navigation_drawer_close">关闭导览</string>
 
-    <string name="action_access_points">接入点</string>
+    <string name="action_access_points">热点</string>
     <string name="action_channel_rating">信道评级</string>
     <string name="action_channel_graph">信道图</string>
     <string name="action_time_graph">时间图</string>
-    <string name="action_channel_available">可用的信道</string>
+    <string name="action_channel_available">网速测试</string>
     <string name="action_vendors">供应商</string>
     <string name="action_settings">设置</string>
     <string name="action_about">关于</string>
@@ -25,7 +25,7 @@
     <string name="channel_rating_best_alternative">尝试另一种WiFi频段</string>
     <string name="channel_rating_heading_rating">信道评级</string>
     <string name="channel_rating_heading_number">信道数</string>
-    <string name="channel_rating_heading_count">接入点计数</string>
+    <string name="channel_rating_heading_count">热点计数</string>
     <string name="channel_short_name">信道</string>
 
     <string name="graph_channel_axis_x">WiFi信道</string>
@@ -38,8 +38,8 @@
     <string name="wifi_band_title">WiFi频段</string>
     <string name="scan_interval_title">扫描间隔</string>
     <string name="scan_interval_summary">%d 每次扫描之间秒</string>
-    <string name="sort_by_title">排序接入点通过</string>
-    <string name="group_by_title">组接入点通过</string>
+    <string name="sort_by_title">排序热点通过</string>
+    <string name="group_by_title">组热点通过</string>
     <string name="channel_graph_legend_title">信道图例显示</string>
     <string name="time_graph_legend_title">时间图例显示</string>
     <string name="theme_title">主题</string>

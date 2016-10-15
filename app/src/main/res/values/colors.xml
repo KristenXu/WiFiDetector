@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#20242E</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <!-- blue_500 -->
-    <color name="connected">#2196F3</color>
-    <color name="connected_background">#616161</color>
+    <color name="connected">#3899ec</color>
+    <!---->
+    <color name="connected_background">#624118</color>
 
     <!-- grey_500 -->
-    <color name="channel">#9E9E9E</color>
+    <!--信道相关-->
+    <color name="channel">#ffcc33</color>
     <!-- cyan_500 -->
     <color name="channel_number">#00BCD4</color>
     <!-- blue_grey_500 -->
@@ -24,4 +26,8 @@
     <color name="warning_color">#FFC107</color>
     <!-- green_500 -->
     <color name="success_color">#4CAF50</color>
+
+    <!-- dark -->
+    <color name="dark_color">#666666</color>
+    <color name="deep_dark_color">#362511</color>
 </resources>

@@ -47,9 +47,9 @@ public class AccessPointsDetail {
         imageView.setColorFilter(resources.getColor(strength.colorResource()));
 
         Security security = wiFiDetail.getSecurity();
-        ImageView securityImage = (ImageView) view.findViewById(R.id.securityImage);
-        securityImage.setImageResource(security.imageResource());
-        securityImage.setColorFilter(resources.getColor(R.color.icons_color));
+//        ImageView securityImage = (ImageView) view.findViewById(R.id.securityImage);
+//        securityImage.setImageResource(security.imageResource());
+//        securityImage.setColorFilter(resources.getColor(R.color.icons_color));
 
         TextView textLevel = (TextView) view.findViewById(R.id.level);
         textLevel.setText(wiFiSignal.getLevel() + "dBm");
@@ -65,8 +65,8 @@ public class AccessPointsDetail {
             .setText(wiFiSignal.getFrequencyStart() + " - " + wiFiSignal.getFrequencyEnd());
         ((TextView) view.findViewById(R.id.width))
             .setText("(" + wiFiSignal.getWiFiWidth().getFrequencyWidth() + WifiInfo.FREQUENCY_UNITS + ")");
-        ((TextView) view.findViewById(R.id.capabilities))
-            .setText(wiFiDetail.getCapabilities());
+//        ((TextView) view.findViewById(R.id.capabilities))
+//            .setText(wiFiDetail.getCapabilities());
 
         TextView textVendor = ((TextView) view.findViewById(R.id.vendor));
         String vendor = wiFiAdditional.getVendorName();

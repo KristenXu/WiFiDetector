@@ -18,6 +18,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -175,7 +176,11 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
         NavigationMenu navigationMenu = NavigationMenu.find(menuItem.getItemId());
         Fragment fragment = navigationMenu.getFragment();
         if (fragment == null) {
-            startActivity(new Intent(this, navigationMenu.getActivity()));
+            if(navigationMenu.getActivity() == null){
+                Log.d("todo","");
+            }else{
+                startActivity(new Intent(this, navigationMenu.getActivity()));
+            }
         } else {
             navigationMenuView.setCurrentNavigationMenu(navigationMenu);
             getSupportFragmentManager().beginTransaction().replace(R.id.main_fragment, fragment).commit();
@@ -231,7 +236,8 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
 
     @NonNull
     private String makeSubtitleText(@NonNull String tag1, @NonNull String tag2, @NonNull String tag3, @NonNull String tag4) {
-        return tag1 + WiFiBand.GHZ2.getBand() + tag2 + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + tag3 + WiFiBand.GHZ5.getBand() + tag4;
+//        return tag1 + WiFiBand.GHZ2.getBand() + tag2 + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + tag3 + WiFiBand.GHZ5.getBand() + tag4;
+        return "";
     }
 
     public NavigationMenuView getNavigationMenuView() {
@@ -251,7 +257,7 @@ public class MainActivity extends AppCompatActivity implements OnSharedPreferenc
         public void onClick(View view) {
             if (navigationMenuView.getCurrentNavigationMenu().isWiFiBandSwitchable()) {
                 Settings settings = MainContext.INSTANCE.getSettings();
-                settings.toggleWiFiBand();
+//                settings.toggleWiFiBand();
             }
         }
     }

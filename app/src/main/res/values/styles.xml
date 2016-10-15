@@ -8,6 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
     <style name="ThemeAppCompatDark" parent="Theme.AppCompat">
+        <item name="android:windowBackground">@color/deep_dark_color</item>
+        <!--<item name="android:colorPrimary">@color/colorPrimary</item>-->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
@@ -23,6 +25,7 @@
     </style>
 
     <style name="ThemeDeviceDefaultLight" parent="android:Theme.DeviceDefault.Light.DarkActionBar">
+        <item name="colorPrimary">@color/deep_dark_color</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- application start -->
-    <string name="app_name">WiFi分析仪</string>
+    <string name="app_name">WiFi检测仪</string>
     <!-- application end -->
 
     <string name="navigation_drawer_open">打开式导览</string>
@@ -12,7 +12,7 @@
     <string name="action_channel_graph">信道图</string>
     <string name="action_time_graph">时间图</string>
     <string name="action_channel_available">网速测试</string>
-    <string name="action_vendors">供应商</string>
+    <string name="action_vendors">数据导出</string>
     <string name="action_settings">设置</string>
     <string name="action_about">关于</string>
 

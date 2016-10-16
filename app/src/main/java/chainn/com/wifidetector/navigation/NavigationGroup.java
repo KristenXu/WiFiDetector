@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 
 public enum NavigationGroup {
     GROUP_FEATURE(NavigationMenu.ACCESS_POINTS, NavigationMenu.CHANNEL_GRAPH, NavigationMenu.TIME_GRAPH),
-    GROUP_OTHER(NavigationMenu.CHANNEL_AVAILABLE),
+    GROUP_OTHER(NavigationMenu.CHANNEL_AVAILABLE, NavigationMenu.VENDOR_LIST),
     GROUP_SETTINGS(NavigationMenu.SETTINGS);
 
     private final NavigationMenu[] navigationMenu;

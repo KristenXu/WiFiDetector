@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#20242E</color>
+    <color name="colorPrimary">#624118</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <!-- blue_500 -->
     <color name="connected">#3899ec</color>
     <!---->
-    <color name="connected_background">#624118</color>
+    <color name="connected_background">#8B4513</color>
 
     <!-- grey_500 -->
     <!--信道相关-->
